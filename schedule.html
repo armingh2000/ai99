@@ -16,8 +16,10 @@ See the instructions <a href="../static_files/docs/Honor-Code.pdf">here</a>.
 <script>
 function scrollFunction() {
   var iframe = document.getElementById("frame1");
-  var iframe2 = iframe.contentWindow.document.getElementById("pageswitcher-content");
-  var elmnt = iframe2.contentWindow.document.getElementById("943551063");
+  var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+  var iframe2 = innerDoc.getElementById("pageswitcher-content");
+  var innerDoc2 = iframe2.contentDocument || iframe2.contentWindow.document;
+  var elmnt = innerDoc2.getElementById("943551063");
   elmnt.style.overflow = "scroll";
 }
 </script>
