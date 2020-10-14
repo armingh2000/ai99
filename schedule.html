@@ -9,18 +9,28 @@ See the instructions <a href="../static_files/docs/Honor-Code.pdf">here</a>.
 <p style="color:darkred;">Homeworks/quizes/exams submitted before sending video above will not be accepted!</p>
 
 <iframe onload="scrollFunction()"
-  width="100%" height="1080px" id="frame1"
+  width="100%" height="1080px" id="iFrame1"
   src="https://docs.google.com/spreadsheets/u/0/d/e/2PACX-1vQQDUgky3MUzYzahDOVOVuIOESDy65CKPlP35838yhgvcuiws9riJomBpjOGHR1x-y8q1r5erN9PhAB/pubhtml/sheet?headers=false&gid=943551063">
 </iframe>
 
-<!--<script>
-function scrollFunction() {
-  var iframe = document.getElementById("frame1");
-  var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-  var iframe2 = innerDoc.getElementById("pageswitcher-content");
-  var innerDoc2 = iframe2.contentDocument || iframe2.contentWindow.document;
-  var elmnt = innerDoc2.getElementById("943551063");
-  elmnt.style.overflow = "scroll";
+<script type="application/javascript">
+
+function resizeIFrameToFitContent( iFrame ) {
+
+    iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
+    iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
 }
+
+window.addEventListener('DOMContentLoaded', function(e) {
+
+    var iFrame = document.getElementById( 'iFrame1' );
+    resizeIFrameToFitContent( iFrame );
+
+    // or, to resize all iframes:
+    var iframes = document.querySelectorAll("iframe");
+    for( var i = 0; i < iframes.length; i++) {
+        resizeIFrameToFitContent( iframes[i] );
+    }
+} );
+
 </script>
--->
